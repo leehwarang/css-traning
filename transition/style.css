@@ -1,0 +1,44 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.line-button {
+  position: relative;
+  padding: 18px 30px;
+  cursor: pointer;
+  background: none;
+
+  font-family: Lato;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.line-button::after {
+  content: "";
+  height: 2px;
+  width: 0;
+  background-color: blue;
+
+  position: absolute; /* 기본적으로 가상요소는 inline 이지만 absolute 를 주면 display: block */
+  bottom: 0;
+  left: 0;
+
+  transition: width 2s;
+}
+
+
+.line-button:hover::after {
+  width: 100%;
+}
+
